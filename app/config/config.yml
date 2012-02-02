@@ -15,6 +15,7 @@ framework:
     default_locale:  %locale%
     session:
         auto_start:     true
+    translator: ~
 
 # Twig Configuration
 twig:
@@ -60,3 +61,8 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Problematic\UserBundle\Entity\User

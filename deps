@@ -65,3 +65,7 @@
     git=http://github.com/doctrine/DoctrineBundle.git
     target=/bundles/Doctrine/Bundle/DoctrineBundle
     version=origin/master
+
+[FOSUserBundle]
+    git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
+    target=bundles/FOS/UserBundle
