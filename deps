@@ -66,6 +66,16 @@
     target=/bundles/Doctrine/Bundle/DoctrineBundle
     version=origin/master
 
+[SwiftMailerBundle]
+    git=http://github.com/symfony/SwiftmailerBundle.git
+    target=/bundles/Symfony/Bundle/SwiftmailerBundle
+    version=origin/master
+
+[MonologBundle]
+    git=git://github.com/symfony/MonologBundle.git
+    target=/bundles/Symfony/Bundle/MonologBundle
+    version=origin/master
+
 [FOSUserBundle]
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
     target=bundles/FOS/UserBundle
