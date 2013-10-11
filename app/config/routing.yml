@@ -1,3 +1,7 @@
+_home:
+    pattern: /
+    defaults: { _controller: "FOSUserBundle:Security:login" }
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

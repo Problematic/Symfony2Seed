@@ -1,0 +1,38 @@
+{% extends 'form_div_layout.html.twig' %}
+{% block choice_widget %}
+{% spaceless %}
+    {% if expanded %}
+        <div {{ block('widget_container_attributes') }}>
+        {% for child in form %}
+            <label class="checkbox">{# need a better way of know whether this is a checkbox or a radio, for bootstrap its the same effect but still #}
+            {{ form_widget(child) }}
+            {{ form_label(child) }}
+            </label>
+        {% endfor %}
+        </div>
+    {% else %}
+    <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+        {% if empty_value is not none %}
+            <option value="">{{ empty_value|trans({}, translation_domain) }}</option>
+        {% endif %}
+        {% if preferred_choices|length > 0 %}
+            {% set options = preferred_choices %}
+            {{ block('widget_choice_options') }}
+            {% if choices|length > 0 and separator is not none %}
+                <option disabled="disabled">{{ separator }}</option>
+            {% endif %}
+        {% endif %}
+        {% set options = choices %}
+        {{ block('widget_choice_options') }}
+    </select>
+    {% endif %}
+{% endspaceless %}
+{% endblock choice_widget %}
+
+{% block checkbox_label %}
+    <span>{{ label }}</span>
+{% endblock checkbox_label %}
+
+{% block radio_label %}
+    <span>{{ label }}</span>
+{% endblock radio_label %}
